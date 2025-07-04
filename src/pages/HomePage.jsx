@@ -18,7 +18,7 @@ function HomePage() {
           <div className="mb-10">
 
           <h1 className="text-6xl font-bold text-[#354a2f] mb-2">Wildroots</h1>
-          <h2 className="">Design by Tuan Hiep</h2>
+          <h2 className="text-lg">Design by Tuan Hiep</h2>
           </div>
           <div>
             <SearchBar onSearch={handleSearch} />
@@ -32,10 +32,8 @@ function HomePage() {
           style={{ maxHeight: "100%" }}
           autoHide={false} // Không ẩn thanh cuộn tự động
           scrollbarMinSize={30} // Đặt kích thước tối thiểu của thanh cuộn
-
         >
           {/* Nội dung */}
-
           <ImgList query={query} />
         </SimpleBar>
       </div>

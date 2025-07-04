@@ -1,26 +1,31 @@
 import React, { useState } from "react";
 
 function SearchBar({ onSearch }) {
-  const [query, setQuery] = useState(""); // Quản lý từ khóa tìm kiếm
+  const [query, setQuery] = useState("");
 
-  // Hàm xử lý sự kiện khi nhấn submit
   const handleSubmit = (e) => {
     e.preventDefault();
     if (query.trim() !== "") {
-      onSearch(query); // Gọi hàm onSearch từ parent component
+      onSearch(query);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex items-center w-full max-w-sm rounded-full border-2 border-gray-300 bg-white">
+    <form
+      onSubmit={handleSubmit}
+      className="flex items-center w-full max-w-sm rounded-full border-2 border-gray-300 bg-white focus-within:border-gray-500 transition"
+    >
       <input
         type="text"
         placeholder="Search images..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        className="w-full px-4 py-2 rounded-full focus:outline-none text-gray-800"
+        className="w-full px-4 py-2 rounded-full focus:outline-none text-gray-800 placeholder-gray-400"
       />
-      <button type="submit" className="m-1 mr-2 p-2 rounded-full bg-[#354a2f] text-white">
+      <button
+        type="submit"
+        className="m-1 mr-2 p-2 rounded-full bg-[#354a2f] text-white hover:bg-[#4f6b42] focus:ring-2 focus:ring-[#354a2f] transition"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
